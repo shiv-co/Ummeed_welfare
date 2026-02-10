@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary system paths
+Disallow: /admin
+Disallow: /login
+Disallow: /dashboard
+Disallow: /api
+
+# Sitemap location
+Sitemap: https://ummeedwelfare.org.in/sitemap.xml

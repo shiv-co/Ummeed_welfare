@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- HOME -->
+  <url>
+    <loc>https://ummeedwelfare.org.in/</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- ABOUT -->
+  <url>
+    <loc>https://ummeedwelfare.org.in/about</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- CAUSES -->
+  <url>
+    <loc>https://ummeedwelfare.org.in/causes</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- EVENTS -->
+  <url>
+    <loc>https://ummeedwelfare.org.in/events</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- GALLERY -->
+  <url>
+    <loc>https://ummeedwelfare.org.in/gallery</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- CONTACT -->
+  <url>
+    <loc>https://ummeedwelfare.org.in/contact</loc>
+    <lastmod>2026-02-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
