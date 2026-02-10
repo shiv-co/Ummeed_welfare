@@ -1,4 +1,4 @@
-import member3 from "../assets/images/shekhar_chauhan.webp";
+import member3 from "../assets/images/shekhar-chauhan.webp";
 import member1 from "../assets/images/rashmi.webp";
 import member2 from "../assets/images/member3.jpeg";
 import hands from "../assets/images/hands.jpg";
