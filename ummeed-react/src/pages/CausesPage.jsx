@@ -58,15 +58,15 @@ export default function Causes() {
   ];
 
   return (
-    <section className="py-28 bg-white">
+    <section className="md:py-20 py-5 bg-white">
 
       {/* HEADER */}
-      <div className="text-center max-w-3xl mx-auto mb-20 px-6">
+      <div className="text-center max-w-3xl mx-auto mb-10 md:mb-20 px-6">
         <p className="text-yellow-500 font-semibold tracking-widest text-sm">
           OUR CAUSES
         </p>
-        <h1 className="text-4xl font-bold mt-3">Give Us Now</h1>
-        <p className="text-gray-600 mt-6 leading-relaxed">
+        <h1 className="md:text-4xl text-3xl font-bold mt-3">Give Us Now</h1>
+        <p className="text-gray-600 mt-4 md:mt-6 text-sm md:text-base leading-relaxed">
           Every day, millions of people across India face challenges that can be
           solved with a little help and a lot of heart.
           <br />
@@ -84,7 +84,7 @@ export default function Causes() {
 
       {/* DONATION FORM SECTION */}
       <div className="bg-[#fdfaf5] mt-32 py-24">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 md:gap-20  gap-10 items-center">
 
           {/* FORM */}
           <form className="bg-white shadow-xl rounded-xl p-10 space-y-5">

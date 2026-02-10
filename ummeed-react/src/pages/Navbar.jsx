@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 // import logo from "../assets/UMMEED_logo.png";
 import logo from "../assets/UMMEED_logo.png";
+import { FaInstagram } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa6";
+
 import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
@@ -71,10 +75,12 @@ export default function Navbar() {
 
     {/* SOCIAL */}
     <div className="hidden md:flex items-center gap-4">
-      <Social icon="f" />
-      <Social icon="x" />
-      <Social icon="i" />
+      <Social  iconComponent={<FaInstagram />}  href="https://www.instagram.com/ummeedwelfaretrust/" />
+      <Social iconComponent={<FaXTwitter />} href="https://x.com/ummeedtrust" />
+      <Social iconComponent={<FaFacebookF />} href="https://www.facebook.com/ummeedwelfaretrust/" />
     </div>
+
+
 
     {/* MOBILE TOGGLE */}
     <button onClick={() => setOpen(!open)} className="md:hidden">
@@ -124,10 +130,12 @@ function Info({ icon, title, value }) {
   );
 }
 
-function Social({ icon }) {
+function Social({ iconComponent, href }) {
   return (
-    <div className="h-9 w-9 rounded-full border border-yellow-500 flex items-center justify-center hover:bg-yellow-500 hover:text-black transition cursor-pointer">
-      {icon}
-    </div>
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      <div className="h-9 w-9 rounded-full border border-yellow-500 flex items-center justify-center hover:bg-yellow-500 hover:text-black transition cursor-pointer">
+        {iconComponent}
+      </div>
+    </a>
   );
 }
