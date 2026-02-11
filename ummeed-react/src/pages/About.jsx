@@ -5,8 +5,9 @@ import hands from "../assets/images/hands.jpg";
 import impact from "../assets/images/impact.webp";
 
 import founder3 from "../assets/images/founder1.jpeg";
-import founder1 from "../assets/images/founder2.webp";
+import founder1 from "../assets/images/founder.webp";
 import founder2 from "../assets/images/founder3.jpeg";
+
 export default function About() {
   return (
     <section className="bg-white overflow-x-hidden">
@@ -15,7 +16,7 @@ export default function About() {
       <div className="py-16 md:py-20 max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
         <img
           src={hands}
-          alt="About"
+          alt="Ummeed Welfare Organization helping community"
           className="rounded-lg shadow-lg w-full object-cover"
         />
 
@@ -155,17 +156,27 @@ export default function About() {
   );
 }
 
+/* TEAM CARD FIXED (No cropping on mobile) */
+
 function TeamCard({ name, role, image }) {
   return (
     <div className="group text-center">
-      <div className="overflow-hidden rounded-lg mb-4">
-        <img
-          src={image}
-          alt={name}
-          className="h-80 w-full object-cover group-hover:scale-110 transition duration-700"
-        />
+      <div className="overflow-hidden rounded-xl mb-4 bg-gray-100">
+        <div className="aspect-[3/4]">
+          <img
+            src={image}
+            alt={name}
+            className="
+              w-full h-full
+              object-contain md:object-cover
+              transition duration-700
+              group-hover:scale-105
+            "
+          />
+        </div>
       </div>
-      <h3 className="font-semibold">{name}</h3>
+
+      <h3 className="font-semibold text-lg">{name}</h3>
       <p className="text-sm text-gray-500">{role}</p>
     </div>
   );

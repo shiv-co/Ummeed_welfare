@@ -260,8 +260,41 @@ const images = [
 
 /* TEMP IMAGES – replace later */
 
-
 export default function Gallery() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const openImage = (index) => {
+    setActiveIndex(index);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeImage = () => {
+    setActiveIndex(null);
+    document.body.style.overflow = "auto";
+  };
+
+  const nextImage = () => {
+    setActiveIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setActiveIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
+  };
+
+  // ESC + Arrow keys
+  useState(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") closeImage();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   return (
     <section className="bg-white overflow-x-hidden">
 
@@ -270,21 +303,67 @@ export default function Gallery() {
         <p className="text-yellow-500 font-semibold tracking-widest text-sm">
           OUR GALLERY
         </p>
-        <h1 className="text-2xl md:text-5xl font-bold  mt-1 md:mt-3">
+        <h1 className="text-2xl md:text-5xl font-bold mt-1 md:mt-3">
           Moments of Hope & Humanity
         </h1>
         <p className="text-gray-600 md:mt-6 mt-3 leading-relaxed text-sm md:text-base">
           Every picture tells a story — of kindness, courage, and compassion.
-          These moments remind us why we do what we do.
         </p>
       </div>
 
-      {/* CREATIVE MASONRY GRID */}
+      {/* MASONRY GRID */}
       <div className="max-w-7xl mx-auto px-2 md:px-6 columns-2 sm:columns-3 lg:columns-4 gap-3 md:gap-6 md:space-y-6 space-y-4">
-        {images.map((img) => (
-          <GalleryCard key={img.id} img={img} />
+        {images.map((img, index) => (
+          <GalleryCard key={img.id} img={img} onClick={() => openImage(index)} />
         ))}
       </div>
+
+      {/* LIGHTBOX */}
+      {activeIndex !== null && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
+
+          {/* Close */}
+          <button
+            onClick={closeImage}
+            className="absolute top-6 right-6 text-white text-3xl"
+          >
+            ✕
+          </button>
+
+          {/* Prev */}
+          <button
+            onClick={prevImage}
+            className="absolute left-6 text-white text-4xl"
+          >
+            ‹
+          </button>
+
+          {/* Image */}
+          <div className="max-w-6xl w-full px-6 text-center">
+            <img
+              src={images[activeIndex].src}
+              alt={images[activeIndex].caption}
+              className="w-full max-h-[80vh] object-contain rounded-lg animate-fadeIn"
+            />
+
+            <p className="text-white mt-6">
+              {images[activeIndex].caption}
+            </p>
+
+            <p className="text-gray-400 text-sm mt-2">
+              {activeIndex + 1} / {images.length}
+            </p>
+          </div>
+
+          {/* Next */}
+          <button
+            onClick={nextImage}
+            className="absolute right-6 text-white text-4xl"
+          >
+            ›
+          </button>
+        </div>
+      )}
 
       {/* CTA */}
       <div className="py-24 text-center px-4">
@@ -300,27 +379,26 @@ export default function Gallery() {
         </button>
       </div>
 
-      {/* FAQ SECTION */}
       <FAQSection />
-
     </section>
   );
 }
 
 /* 🔹 GALLERY CARD */
 
-function GalleryCard({ img }) {
+function GalleryCard({ img, onClick }) {
   return (
-    <div className="relative group overflow-hidden rounded-xl shadow-lg break-inside-avoid">
+    <div
+      onClick={onClick}
+      className="relative group overflow-hidden rounded-xl shadow-lg break-inside-avoid cursor-pointer"
+    >
       <img
         src={img.src}
-        alt="images of NGO activities"
-        
+        alt={img.caption}
         loading="lazy"
         className="w-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[1px]"
       />
 
-      {/* OVERLAY */}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition duration-500 flex items-center justify-center">
         <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition delay-200 px-4 text-center">
           {img.caption}
@@ -329,6 +407,7 @@ function GalleryCard({ img }) {
     </div>
   );
 }
+
 
 /* 🔹 FAQ SECTION */
 
