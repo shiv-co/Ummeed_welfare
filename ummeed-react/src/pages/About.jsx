@@ -49,8 +49,29 @@ export default function About() {
         </div>
       </div>
 
-   
 
+
+      {/* MEMBERS */}
+      <div className="py-16 md:py-28 max-w-7xl mx-auto px-4 md:px-6 text-center">
+        <p className="text-yellow-500 font-semibold tracking-widest text-sm mb-2">
+          OUR MEMBERS
+        </p>
+        <h1 className="text-2xl md:text-4xl font-bold mb-6">
+          Meet The Hands That Build Hope
+        </h1>
+
+        <p className="text-gray-600 max-w-3xl mx-auto mb-12 md:mb-16">
+          Our members are the true heroes behind every act of kindness.
+        </p>
+
+        <div className="max-w-5xl mx-auto px-4 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-14">
+          <TeamCard name="Miss Rashmi" role="Member" image={member1} />
+          <TeamCard name="Shivani Upadhyay" role="Member" image={member2} />
+          <TeamCard name="Shekhar Chauhan" role="Member" image={member3} />
+        </div>
+      </div>
+
+      
       {/* BECOME A MEMBER */}
       <div className="py-16 md:py-28 bg-[#fdfaf5]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
@@ -79,26 +100,6 @@ export default function About() {
             </button>
           </form>
 
-            {/* MEMBERS */}
-      <div className="py-16 md:py-28 max-w-7xl mx-auto px-4 md:px-6 text-center">
-        <p className="text-yellow-500 font-semibold tracking-widest text-sm mb-2">
-          OUR MEMBERS
-        </p>
-        <h1 className="text-2xl md:text-4xl font-bold mb-6">
-          Meet The Hands That Build Hope
-        </h1>
-
-        <p className="text-gray-600 max-w-3xl mx-auto mb-12 md:mb-16">
-          Our members are the true heroes behind every act of kindness.
-        </p>
-
-        <div className="max-w-5xl mx-auto px-4 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-14">
-          <TeamCard name="Miss Rashmi" role="Member" image={member1} />
-          <TeamCard name="Shivani Upadhyay" role="Member" image={member2} />
-          <TeamCard name="Shekhar Chauhan" role="Member" image={member3} />
-        </div>
-      </div>
-
           {/* INFO */}
           <div className="text-center md:text-left">
             <p className="text-yellow-500 font-semibold mb-2">REQUIREMENTS</p>
@@ -123,9 +124,8 @@ export default function About() {
         </div>
       </div>
 
-    
 
-         {/* IMPACT */}
+            {/* IMPACT */}
       <div
         className="relative py-16 md:py-28 bg-cover bg-center text-white"
         style={{ backgroundImage: `url(${impact})` }}
@@ -155,6 +155,7 @@ export default function About() {
           </div>
         </div>
       </div>
+
 
     </section>
   );

@@ -110,8 +110,8 @@ export default function HomePage() {
     <BigCauseCard
       title="Healthcare For All"
       desc="From medical check-ups to medicine distribution, we reach out to those who cannot afford basic healthcare."
-      raised={680000}
-      goal={800000}
+      raised={68000}
+      goal={180000}
       image={causes1}
     />
 
@@ -120,22 +120,22 @@ export default function HomePage() {
       <SmallCauseCard
         title="Women Empowerment"
         desc="We help women gain confidence and independence through vocational training, education, and self-help groups."
-        raised={540000}
-        goal={700000}
+        raised={54000}
+        goal={100000}
         image={causes2}
       />
       <SmallCauseCard
         title="Food For The Hungry"
         desc="Our food distribution drives ensure that no one in our community goes to bed hungry."
-        raised={320000}
-        goal={390000}
+        raised={32000}
+        goal={50000}
         image={causes3}
       />
       <SmallCauseCard
         title="Disaster Relief & Emergency Support"
         desc="In times of crisis, we provide immediate relief and long-term support to affected communities."
-        raised={400000}
-        goal={550000}
+        raised={20000}
+        goal={55000}
         image={causes4}
       />
     </div>
